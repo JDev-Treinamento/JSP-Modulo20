@@ -4,6 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-<%@ include file="pagina-include.jsp" %>
+<h1> Receber nome </h1>
+
+<%= request.getParameter("paramForward")%>
 </body>
 </html>

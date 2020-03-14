@@ -5,7 +5,9 @@
     <title>Curso JSP</title>
 </head>
 <body>
-<%@ include file="pagina-include.jsp" %>
-<myprefix:minhatag/>
+<h1> Index </h1>
+<jsp:forward page="receber-nome.jsp">
+    <jsp:param name="paramForward" value="curso de jsp site java avançado.com"/>
+</jsp:forward>
 </body>
 </html>
