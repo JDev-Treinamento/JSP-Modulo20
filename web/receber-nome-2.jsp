@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<%= session.getAttribute("curso")%>
+<%= session.getAttribute("curso") + "Pagina 2" %>
 </body>
 </html>
