@@ -8,6 +8,8 @@
 <h1> Index </h1>
 
 <form action="cabecalho.jsp" method="post">
+
+    <% session.setAttribute("user", "javaavancado");%>
     <input type="text" aria-label="nome" id="nome" name="nome"/>
     <br/>
     <input type="text" aria-label="ano" id="ano" name="ano"/>

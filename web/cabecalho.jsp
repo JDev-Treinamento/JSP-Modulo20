@@ -4,9 +4,9 @@
 <jsp:setProperty property="*" name="calcula"/>
 <h3> Cabecalho </h3>
 
-<jsp:getProperty name="calcula" property="nome"/>
-<br/>
-<jsp:getProperty name="calcula" property="ano"/>
-<br/>
-<jsp:getProperty name="calcula" property="sexo"/>
+<p> Nome : ${param.nome}</p>
+<p> Ano : ${param.ano}</p>
+<p> Sexo : ${param.sexo}</p>
+<p> Sessao : ${sessionScope.get("user")}</p>
+
 </html>
