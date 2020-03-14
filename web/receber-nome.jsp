@@ -5,5 +5,8 @@
 </head>
 <body>
 <%= "Nome Recebido: " + request.getParameter("nome") %>
+<br/>
+
+<% response.sendRedirect("https://www.uol.com.br/"); %>
 </body>
 </html>
