@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="myprefix" uri="WEB-INF/testetag.tld" %>
+
+<jsp:useBean id="calcula" class="beans.BeanCursoJsp" type="beans.BeanCursoJsp" scope="page"/>
 <html>
 <head>
     <title>Curso JSP</title>
 </head>
 <body>
 <h1> Index </h1>
-<jsp:include page="cabecalho.jsp"/>
-<h3> Corpo da pagina </h3>
-<jsp:include page="rodape.jsp"/>
+
+<%= calcula.calcula(50)%>
 
 </body>
 </html>
