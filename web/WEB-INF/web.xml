@@ -7,4 +7,9 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+    <context-param>
+        <param-name>estado</param-name>
+        <param-value>paraná</param-value>
+    </context-param>
 </web-app>

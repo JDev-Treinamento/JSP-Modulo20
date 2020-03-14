@@ -22,5 +22,7 @@
 <%=cont%>
 <br/>
 <%=retorna(cont)%>
+<br/>
+<%= application.getInitParameter("estado")%>
 </body>
 </html>
