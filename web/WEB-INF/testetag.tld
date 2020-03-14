@@ -1,0 +1,10 @@
+<taglib xmlns="http://java.sun.com/JSP/Page">
+<tlib-version>1.0</tlib-version>
+<jsp-version>2.0</jsp-version>
+
+<tag>
+    <name>minhatag</name>
+    <tag-class>tag.TagCursoJsp</tag-class>
+    <body-content>empty</body-content>
+</tag>
+</taglib>

@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<%= session.getAttribute("curso") + "Pagina 2" %>
+<%@ include file="pagina-include.jsp" %>
 </body>
 </html>
