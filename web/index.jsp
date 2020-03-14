@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="myprefix" uri="WEB-INF/testetag.tld" %>
-
-<jsp:useBean id="calcula" class="beans.BeanCursoJsp" type="beans.BeanCursoJsp" scope="page"/>
 <html>
 <head>
     <title>Curso JSP</title>
@@ -9,7 +7,15 @@
 <body>
 <h1> Index </h1>
 
-<%= calcula.calcula(50)%>
+<form action="cabecalho.jsp" method="post">
+    <input type="text" aria-label="nome" id="nome" name="nome"/>
+    <br/>
+    <input type="text" aria-label="ano" id="ano" name="ano"/>
+    <br/>
+    <input type="text" aria-label="sexo" id="sexo" name="sexo"/>
+    <br/>
+    <input type="submit" value="testar"/>
+</form>
 
 </body>
 </html>
