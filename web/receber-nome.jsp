@@ -5,7 +5,5 @@
 </head>
 <body>
 <%= "Nome Recebido: " + request.getParameter("nome") %>
-
-
 </body>
 </html>
