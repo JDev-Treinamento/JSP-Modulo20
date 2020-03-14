@@ -4,9 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-<%
+<%= "Nome Recebido: " + request.getParameter("nome") %>
 
-    String nome = "Nome Recebido: " + request.getParameter("nome");
-    out.print(nome); %>
+
 </body>
 </html>
