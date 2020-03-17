@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Cadastro de Usuário</title>
@@ -30,7 +31,21 @@
                 <input type="submit" id="submit" name="submit" aria-label="Salvar" value="Salvar"/>
             </td>
         </tr>
+    </table>
 </form>
 
+
+<table>
+    <c:forEach items="${usuarios}" var="user">
+        <tr>
+            <td style="width: 150px">
+                <c:out value=" ${user.login}"/>
+            </td>
+            <td>
+                <c:out value=" ${user.senha}"/>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

@@ -3,6 +3,7 @@ package servlet;
 import beans.BeanCursoJsp;
 import dao.DaoUsuario;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +28,7 @@ public class Usuario extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)  throws ServletException, IOException  {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
         String senha = req.getParameter("senha");
 
@@ -36,6 +37,15 @@ public class Usuario extends HttpServlet {
         usuario.setSenha(senha);
 
 
-        daoUsuario.salvarUsuario(usuario);
+        this.daoUsuario.salvarUsuario(usuario);
+
+        try {
+            RequestDispatcher view = req.getRequestDispatcher("/cadastroUsuario.jsp");
+            req.setAttribute("usuarios", this.daoUsuario.listar());
+
+            view.forward(req, resp);
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 }

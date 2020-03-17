@@ -5,7 +5,10 @@ import connection.SingleConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DaoUsuario {
 
@@ -35,5 +38,23 @@ public class DaoUsuario {
                 sqlException.getStackTrace();
             }
         }
+    }
+
+    public List<BeanCursoJsp> listar() throws SQLException {
+        List<BeanCursoJsp> lista = new ArrayList<>();
+        String sql = "SELECT * FROM USUARIO";
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+
+        while (resultSet.next()) {
+            BeanCursoJsp beanCursoJsp = new BeanCursoJsp();
+            beanCursoJsp.setLogin(resultSet.getString("login"));
+            beanCursoJsp.setSenha(resultSet.getString("senha"));
+            lista.add(beanCursoJsp);
+        }
+
+        return lista;
+
     }
 }
