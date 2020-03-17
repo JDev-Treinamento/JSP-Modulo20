@@ -7,16 +7,12 @@
 <body>
 <h1> Index </h1>
 
-<form action="cabecalho.jsp" method="post">
-
-    <% session.setAttribute("user", "javaavancado");%>
-    <input type="text" aria-label="nome" id="nome" name="nome"/>
+<form action="LoginServlet" method="post">
+    <input type="text" id="login" name="login" aria-label="login"/>
     <br/>
-    <input type="text" aria-label="ano" id="ano" name="ano"/>
+    <input type="password" id="senha" name="senha" aria-label="senha"/>
     <br/>
-    <input type="text" aria-label="sexo" id="sexo" name="sexo"/>
-    <br/>
-    <input type="submit" value="testar"/>
+    <input type="submit" value="Logar" aria-label="Logar"/>
 </form>
 
 </body>

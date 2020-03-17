@@ -1,9 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<h2> Rodape </h2>
-</body>
+
+<h3> Seja bem vindo ao sistema em JSP </h3>
+
 </html>

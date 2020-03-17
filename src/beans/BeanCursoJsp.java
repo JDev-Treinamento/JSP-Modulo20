@@ -2,37 +2,27 @@ package beans;
 
 public class BeanCursoJsp {
 
-    private String nome;
+    private String login;
 
-    private String ano;
+    private String senha;
 
-    private String sexo;
-
-    public int calcula(int numero) {
-        return numero * 100;
+    public boolean validarLoginSenha(String login, String senha) {
+        return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin");
     }
 
-    public String getNome() {
-        return nome;
+    public String getLogin() {
+        return login;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getAno() {
-        return ano;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setAno(String ano) {
-        this.ano = ano;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
