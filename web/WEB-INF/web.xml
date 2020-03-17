@@ -9,7 +9,7 @@
     </welcome-file-list>
 
     <filter>
-        <filter-name>filter</filter-name>
+        <filter-name>filterServlet</filter-name>
         <filter-class>filter.FilterServlet</filter-class>
     </filter>
 </web-app>
