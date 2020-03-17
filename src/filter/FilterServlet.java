@@ -22,7 +22,6 @@ public class FilterServlet implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
         try {
-
             filterChain.doFilter(servletRequest, servletResponse);
             connection.commit();
         } catch (Exception e) {

@@ -1,6 +1,7 @@
 package servlet;
 
 import beans.BeanCursoJsp;
+import dao.DaoLogin;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +16,8 @@ public class LoginServlet extends HttpServlet {
 
     private static final long serialVersionUI = 1L;
 
+    private DaoLogin daoLogin = new DaoLogin();
+
     public LoginServlet() {
         super();
     }
@@ -26,24 +29,22 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BeanCursoJsp beanCursoJsp = new BeanCursoJsp();
-
         String login = req.getParameter("login");
         String senha = req.getParameter("senha");
 
         RequestDispatcher dispatcher;
 
-        if (beanCursoJsp.validarLoginSenha(login, senha)) {
-            dispatcher = req.getRequestDispatcher("acesso_liberado.jsp");
-        } else {
-            dispatcher = req.getRequestDispatcher("acesso_negado.jsp");
+        try {
+
+            if (this.daoLogin.validarLogin(login, senha)) {
+                dispatcher = req.getRequestDispatcher("acesso_liberado.jsp");
+            } else {
+                dispatcher = req.getRequestDispatcher("acesso_negado.jsp");
+            }
+
+            dispatcher.forward(req, resp);
+        } catch (Exception e) {
+            e.getStackTrace();
         }
-
-        //Outro exemplo para o IF com Ternario
-//        dispatcher = beanCursoJsp.validarLoginSenha(login, senha)
-//                ? req.getRequestDispatcher("acesso_liberado.jsp")
-//                : req.getRequestDispatcher("acesso_negado.jsp");
-
-        dispatcher.forward(req, resp);
     }
 }

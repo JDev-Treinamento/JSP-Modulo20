@@ -8,17 +8,6 @@
 <body>
 <h1> Index </h1>
 
-<c:set var="numero" value="${100/2}"/>
-
-<c:if test="${numero == 50}">
-    <c:redirect url="acesso_liberado.jsp"/>
-</c:if>
-
-<c:if test="${numero == 50}">
-    <c:redirect url="http://www.javaavancado.com"/>
-</c:if>
-
-
 <form action="LoginServlet" method="post">
     <label for="login"> Login: </label>
     <input type="text" id="login" name="login" aria-label="login"/>
