@@ -24,7 +24,24 @@ public class Usuario extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+
+        try {
+            String acao = req.getParameter("acao");
+
+            String user = req.getParameter("user");
+
+
+            if (acao.equalsIgnoreCase("delete")) {
+                this.daoUsuario.delete(user);
+            }
+
+            RequestDispatcher view = req.getRequestDispatcher("/cadastroUsuario.jsp");
+            req.setAttribute("usuarios", this.daoUsuario.listar());
+
+            view.forward(req, resp);
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     @Override
@@ -48,4 +65,5 @@ public class Usuario extends HttpServlet {
             e.getStackTrace();
         }
     }
+
 }

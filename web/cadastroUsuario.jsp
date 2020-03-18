@@ -44,6 +44,10 @@
             <td>
                 <c:out value=" ${user.senha}"/>
             </td>
+
+            <td>
+                <a href="SalvarUsuario?acao=delete&user=${user.login}">Excluir</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
