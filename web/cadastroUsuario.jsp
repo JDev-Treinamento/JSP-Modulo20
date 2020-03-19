@@ -8,12 +8,21 @@
 <h3> Cadastro de Usuario</h3>
 <form action="SalvarUsuario" method="post">
     <table>
+
+        <tr>
+            <td>
+                Codigo:
+            </td>
+            <td>
+                <input type="text" id="id" name="id" aria-label="id" value="${user.id}"/>
+            </td>
+        </tr>
         <tr>
             <td>
                 Login
             </td>
             <td>
-                <input type="text" id="login" name="login" aria-label="login"/>
+                <input type="text" id="login" name="login" aria-label="login" value="${user.login}"/>
             </td>
         </tr>
 
@@ -22,7 +31,7 @@
                 Senha
             </td>
             <td>
-                <input type="password" id="senha" name="senha" aria-label="senha"/>
+                <input type="password" id="senha" name="senha" aria-label="senha" value="${user.senha}"/>
             </td>
         </tr>
 
@@ -43,6 +52,10 @@
             </td>
             <td>
                 <c:out value=" ${user.senha}"/>
+            </td>
+
+            <td>
+                <a href="SalvarUsuario?acao=editar&user=${user.login}">Editar</a>
             </td>
 
             <td>

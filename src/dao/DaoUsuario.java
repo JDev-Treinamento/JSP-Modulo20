@@ -75,4 +75,48 @@ public class DaoUsuario {
             }
         }
     }
+
+    public BeanCursoJsp consultar(String login) throws SQLException {
+        String sql = "SELECT * FROM USUARIO " +
+                "WHERE LOGIN = '" + login + "'";
+
+
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.next()) {
+            BeanCursoJsp beanCursoJsp = new BeanCursoJsp();
+            beanCursoJsp.setId(resultSet.getLong("id"));
+            beanCursoJsp.setLogin(resultSet.getString("login"));
+            beanCursoJsp.setSenha(resultSet.getString("senha"));
+
+            return beanCursoJsp;
+        }
+
+
+        return null;
+    }
+
+
+    public void atualizar(BeanCursoJsp usuario) {
+
+        String sql = "UPDATE USUARIO SET LOGIN = ?, SENHA = ? " +
+                "WHERE ID = " + usuario.getId();
+
+        try {
+            PreparedStatement insert = connection.prepareStatement(sql);
+            insert.setString(1, usuario.getLogin());
+            insert.setString(2, usuario.getSenha());
+
+            insert.executeUpdate();
+            connection.commit();
+        } catch (Exception e) {
+            e.getStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException sqlException) {
+                sqlException.getStackTrace();
+            }
+        }
+    }
 }
