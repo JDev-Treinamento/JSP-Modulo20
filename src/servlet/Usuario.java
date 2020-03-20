@@ -62,11 +62,13 @@ public class Usuario extends HttpServlet {
         String id = req.getParameter("id");
         String login = req.getParameter("login");
         String senha = req.getParameter("senha");
+        String nome = req.getParameter("nome");
 
         BeanCursoJsp usuario = new BeanCursoJsp();
         usuario.setId(id.isEmpty() ? null : Long.parseLong(id));
         usuario.setLogin(login);
         usuario.setSenha(senha);
+        usuario.setNome(nome);
 
         if (id == null || id.isEmpty()) {
 
