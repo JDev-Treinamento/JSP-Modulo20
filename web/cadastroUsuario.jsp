@@ -3,66 +3,89 @@
 <html>
 <head>
     <title>Cadastro de Usuário</title>
+    <link href="resources/css/cadastro.css" rel="stylesheet">
 </head>
 <body>
-<h3> Cadastro de Usuario</h3>
+<h2 class="center"> Cadastro de Usuario</h2>
 <form action="SalvarUsuario" method="post">
-    <table>
+    <ul class="form-style-1">
+        <li>
+            <table>
+                <tr>
+                    <td>
+                        Codigo:
+                    </td>
+                    <td>
+                        <input autocomplete="off" class="field-long" type="text" id="id" name="id" aria-label="id"
+                               value="${user.id}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Login:
+                    </td>
+                    <td>
+                        <input autocomplete="off" class="field-long" type="text" id="login" name="login"
+                               aria-label="login"
+                               value="${user.login}"/>
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                Codigo:
-            </td>
-            <td>
-                <input type="text" id="id" name="id" aria-label="id" value="${user.id}"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Login
-            </td>
-            <td>
-                <input type="text" id="login" name="login" aria-label="login" value="${user.login}"/>
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        Senha:
+                    </td>
+                    <td>
+                        <input autocomplete="off" class="field-long" type="password" id="senha" name="senha"
+                               aria-label="senha"
+                               value="${user.senha}"/>
+                    </td>
+                </tr>
 
-        <tr>
-            <td>
-                Senha
-            </td>
-            <td>
-                <input type="password" id="senha" name="senha" aria-label="senha" value="${user.senha}"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <input type="submit" id="submit" name="submit" aria-label="Salvar" value="Salvar"/>
-            </td>
-        </tr>
-    </table>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type="submit" id="submit" name="submit" aria-label="Salvar" value="Salvar"/>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
 </form>
 
+<div class="container">
 
-<table>
-    <c:forEach items="${usuarios}" var="user">
+    <table class="responsive-table">
+        <caption>Usuarios Cadastrados</caption>
+        <tbody>
         <tr>
-            <td style="width: 150px">
-                <c:out value=" ${user.login}"/>
-            </td>
-            <td>
-                <c:out value=" ${user.senha}"/>
-            </td>
-
-            <td>
-                <a href="SalvarUsuario?acao=editar&user=${user.login}">Editar</a>
-            </td>
-
-            <td>
-                <a href="SalvarUsuario?acao=delete&user=${user.login}">Excluir</a>
-            </td>
+            <th scope="col">Login</th>
+            <th scope="col">Senha</th>
+            <th scope="col"> Editar</th>
+            <th scope="col">Excluir</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach items="${usuarios}" var="user">
+            <tr>
+                <td class="color-td">
+                    <c:out value=" ${user.login}"/>
+                </td>
+                <td class="color-td">
+                    <c:out value=" ${user.senha}"/>
+                </td>
+
+                <td class="color-td">
+                    <a href="SalvarUsuario?acao=editar&user=${user.login}">Editar</a>
+                </td>
+
+                <td class="color-td">
+                    <a href="SalvarUsuario?acao=delete&user=${user.login}">Excluir</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+
+    </table>
+</div>
 </body>
 </html>

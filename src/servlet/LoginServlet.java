@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
         try {
 
             if (this.daoLogin.validarLogin(login, senha)) {
-                dispatcher = req.getRequestDispatcher("acesso_liberado.jsp");
+                dispatcher = req.getRequestDispatcher("cadastroUsuario.jsp");
             } else {
                 dispatcher = req.getRequestDispatcher("acesso_negado.jsp");
             }
