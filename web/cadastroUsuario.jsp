@@ -60,6 +60,7 @@
         <caption>Usuarios Cadastrados</caption>
         <tbody>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">Login</th>
             <th scope="col">Senha</th>
             <th scope="col"> Editar</th>
@@ -68,6 +69,9 @@
         <c:forEach items="${usuarios}" var="user">
             <tr>
                 <td class="color-td">
+                    <c:out value=" ${user.id}"/>
+                </td>
+                <td class="color-td">
                     <c:out value=" ${user.login}"/>
                 </td>
                 <td class="color-td">
@@ -75,11 +79,15 @@
                 </td>
 
                 <td class="color-td">
-                    <a href="SalvarUsuario?acao=editar&user=${user.login}">Editar</a>
+                    <a href="SalvarUsuario?acao=editar&user=${user.login}"><img src="resources/icon/editar.png"
+                                                                                width="20px" height="20px"
+                                                                                alt="editar" title="editar"/></a>
                 </td>
 
                 <td class="color-td">
-                    <a href="SalvarUsuario?acao=delete&user=${user.login}">Excluir</a>
+                    <a href="SalvarUsuario?acao=delete&user=${user.login}"><img src="resources/icon/excluir.png"
+                                                                                width="20px" height="20px"
+                                                                                alt="excluir" title="excluir"/></a>
                 </td>
             </tr>
         </c:forEach>
