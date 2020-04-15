@@ -7,6 +7,7 @@
 </head>
 <body>
 <h2 class="center"> Cadastro de Usuario</h2>
+<h3 class="center message-color"> ${msg} </h3>
 <form action="SalvarUsuario" method="post" id="formUser">
     <ul class="form-style-1">
         <li>

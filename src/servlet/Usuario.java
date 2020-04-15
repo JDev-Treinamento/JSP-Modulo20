@@ -89,10 +89,14 @@ public class Usuario extends HttpServlet {
 			usuario.setNome(nome);
 
 			try {
+
+				if (id == null || id.isEmpty() && !daoUsuario.validarLogin(login)) {
+					req.setAttribute("msg", "Usuario já existe com mesmo login");
+				}
 				if (id == null || id.isEmpty() && daoUsuario.validarLogin(login)) {
 
 					this.daoUsuario.salvarUsuario(usuario);
-				} else if (id != null || id.isEmpty() && daoUsuario.validarLogin(login)){
+				} else if (id != null || id.isEmpty() && daoUsuario.validarLogin(login)) {
 					this.daoUsuario.atualizar(usuario);
 				}
 

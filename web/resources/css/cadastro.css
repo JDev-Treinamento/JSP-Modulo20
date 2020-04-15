@@ -98,6 +98,10 @@ select {
     text-align: center;
 }
 
+.message-color{
+    color: orange;
+}
+
 .container {
     margin: 5% 3%;
 }

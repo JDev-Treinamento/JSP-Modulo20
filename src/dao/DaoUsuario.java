@@ -134,12 +134,6 @@ public class DaoUsuario {
 		ResultSet resultSet = statement.executeQuery();
 
 		if (resultSet.next()) {
-			BeanCursoJsp beanCursoJsp = new BeanCursoJsp();
-			beanCursoJsp.setId(resultSet.getLong("id"));
-			beanCursoJsp.setLogin(resultSet.getString("login"));
-			beanCursoJsp.setSenha(resultSet.getString("senha"));
-			beanCursoJsp.setNome(resultSet.getString("nome"));
-
 			return resultSet.getInt("qtd") <= 0;
 		}
 
