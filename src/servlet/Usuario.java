@@ -88,14 +88,14 @@ public class Usuario extends HttpServlet {
 			usuario.setSenha(senha);
 			usuario.setNome(nome);
 
-			if (id.isEmpty()) {
-
-				this.daoUsuario.salvarUsuario(usuario);
-			} else {
-				this.daoUsuario.atualizar(usuario);
-			}
-
 			try {
+				if (id == null || id.isEmpty() && daoUsuario.validarLogin(login)) {
+
+					this.daoUsuario.salvarUsuario(usuario);
+				} else if (id != null || id.isEmpty() && daoUsuario.validarLogin(login)){
+					this.daoUsuario.atualizar(usuario);
+				}
+
 				RequestDispatcher view = req.getRequestDispatcher("/cadastroUsuario.jsp");
 				req.setAttribute("usuarios", this.daoUsuario.listar());
 
