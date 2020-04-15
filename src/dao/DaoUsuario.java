@@ -61,9 +61,9 @@ public class DaoUsuario {
 
     }
 
-    public void delete(String login) {
+    public void delete(String id) {
         String sql = "DELETE FROM USUARIO " +
-                "WHERE LOGIN = '" + login + "'";
+                "WHERE ID = '" + id + "'";
 
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -79,9 +79,9 @@ public class DaoUsuario {
         }
     }
 
-    public BeanCursoJsp consultar(String login) throws SQLException {
+    public BeanCursoJsp consultar(String id) throws SQLException {
         String sql = "SELECT * FROM USUARIO " +
-                "WHERE LOGIN = '" + login + "'";
+                "WHERE ID = '" + id + "'";
 
 
         PreparedStatement statement = connection.prepareStatement(sql);

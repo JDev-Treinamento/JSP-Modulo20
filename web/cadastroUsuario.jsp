@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2 class="center"> Cadastro de Usuario</h2>
-<form action="SalvarUsuario" method="post">
+<form action="SalvarUsuario" method="post" id="formUser">
     <ul class="form-style-1">
         <li>
             <table>
@@ -58,6 +58,8 @@
                     </td>
                     <td>
                         <input type="submit" id="submit" name="submit" aria-label="Salvar" value="Salvar"/>
+                        <input type="submit" id="cancel" name="submit" aria-label="Cancelar" value="Cancelar"
+                               onclick="document.getElementById('formUser').action = 'SalvarUsuario?acao=reset'"/>
                     </td>
                 </tr>
             </table>
@@ -90,15 +92,15 @@
                 </td>
 
                 <td class="color-td">
-                    <a href="SalvarUsuario?acao=editar&user=${user.login}"><img src="resources/icon/editar.png"
-                                                                                width="20px" height="20px"
-                                                                                alt="editar" title="editar"/></a>
+                    <a href="SalvarUsuario?acao=editar&user=${user.id}"><img src="resources/icon/editar.png"
+                                                                             width="20px" height="20px"
+                                                                             alt="editar" title="editar"/></a>
                 </td>
 
                 <td class="color-td">
-                    <a href="SalvarUsuario?acao=delete&user=${user.login}"><img src="resources/icon/excluir.png"
-                                                                                width="20px" height="20px"
-                                                                                alt="excluir" title="excluir"/></a>
+                    <a href="SalvarUsuario?acao=delete&user=${user.id}"><img src="resources/icon/excluir.png"
+                                                                             width="20px" height="20px"
+                                                                             alt="excluir" title="excluir"/></a>
                 </td>
             </tr>
         </c:forEach>

@@ -8,6 +8,6 @@
 
 <h3> Seja bem vindo ao sistema em JSP </h3>
 
-<a href="cadastroUsuario.jsp">Cadastro de Usuario</a>
+<a href="SalvarUsuario?acao=listarTodos">Cadastro de Usuario</a>
 </body>
 </html>
