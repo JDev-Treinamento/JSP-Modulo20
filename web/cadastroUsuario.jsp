@@ -56,6 +56,17 @@
 
                 <tr>
                     <td>
+                        Telefone:
+                    </td>
+                    <td>
+                        <input autocomplete="off" class="field-long" type="text" id="telefone" name="telefone"
+                               aria-label="telefone"
+                               value="${user.telefone}"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
                     </td>
                     <td>
                         <input type="submit" id="submit" name="submit" aria-label="Salvar" value="Salvar"/>
@@ -77,6 +88,7 @@
             <th scope="col">ID</th>
             <th scope="col">Login</th>
             <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
             <th scope="col"> Editar</th>
             <th scope="col">Excluir</th>
         </tr>
@@ -90,6 +102,10 @@
                 </td>
                 <td class="color-td">
                     <c:out value=" ${user.nome}"/>
+                </td>
+
+                <td class="color-td">
+                    <c:out value=" ${user.telefone}"/>
                 </td>
 
                 <td class="color-td">

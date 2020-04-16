@@ -3,43 +3,53 @@ package beans;
 public class BeanCursoJsp {
 
 
-    private Long id;
+	private Long id;
 
-    private String login;
+	private String login;
 
-    private String nome;
+	private String nome;
 
-    private String senha;
+	private String senha;
 
-    public Long getId() {
-        return id;
-    }
+	private String telefone;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getLogin() {
-        return login;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+	public String getLogin() {
+		return login;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 }

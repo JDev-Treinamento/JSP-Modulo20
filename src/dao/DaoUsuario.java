@@ -20,14 +20,15 @@ public class DaoUsuario {
 
 	public void salvarUsuario(BeanCursoJsp usuario) {
 
-		String sql = "INSERT INTO USUARIO(login, senha, nome) " +
-				"VALUES (?,?, ?)";
+		String sql = "INSERT INTO USUARIO(login, senha, nome, telefone) " +
+				"VALUES (?,?, ?, ?)";
 
 		try {
 			PreparedStatement insert = connection.prepareStatement(sql);
 			insert.setString(1, usuario.getLogin());
 			insert.setString(2, usuario.getSenha());
 			insert.setString(3, usuario.getNome());
+			insert.setString(4, usuario.getTelefone());
 
 			insert.execute();
 			connection.commit();
@@ -54,6 +55,7 @@ public class DaoUsuario {
 			beanCursoJsp.setLogin(resultSet.getString("login"));
 			beanCursoJsp.setSenha(resultSet.getString("senha"));
 			beanCursoJsp.setNome(resultSet.getString("nome"));
+			beanCursoJsp.setTelefone(resultSet.getString("telefone"));
 			lista.add(beanCursoJsp);
 		}
 
@@ -93,6 +95,7 @@ public class DaoUsuario {
 			beanCursoJsp.setLogin(resultSet.getString("login"));
 			beanCursoJsp.setSenha(resultSet.getString("senha"));
 			beanCursoJsp.setNome(resultSet.getString("nome"));
+			beanCursoJsp.setTelefone(resultSet.getString("telefone"));
 
 			return beanCursoJsp;
 		}
@@ -104,7 +107,7 @@ public class DaoUsuario {
 
 	public void atualizar(BeanCursoJsp usuario) {
 
-		String sql = "UPDATE USUARIO SET LOGIN = ?, SENHA = ? , NOME = ? " +
+		String sql = "UPDATE USUARIO SET LOGIN = ?, SENHA = ? , NOME = ?, TELEFONE = ? " +
 				"WHERE ID = " + usuario.getId();
 
 		try {
@@ -112,6 +115,7 @@ public class DaoUsuario {
 			insert.setString(1, usuario.getLogin());
 			insert.setString(2, usuario.getSenha());
 			insert.setString(3, usuario.getNome());
+			insert.setString(4, usuario.getTelefone());
 
 			insert.executeUpdate();
 			connection.commit();
